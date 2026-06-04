@@ -102,7 +102,7 @@ Issues and pull requests are welcome — especially additional teaching examples
 
 ## License
 
-No license is set yet. Until one is added, all rights are reserved. Consider adding a permissive license such as [MIT](https://choosealicense.com/licenses/mit/) if you'd like others to reuse it freely.
+ [MIT](https://choosealicense.com/licenses/mit/) 
 
 ## Acknowledgements
 
