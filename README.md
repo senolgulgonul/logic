@@ -18,18 +18,18 @@ It runs entirely in the browser as a single self-contained HTML file — no inst
 Most browser and desktop logic simulators either need an install (Java, a desktop app) or draw their timing diagrams on an *event* axis, where the clock visibly stretches whenever an input changes — confusing for students reading "given the inputs, draw the output" problems. LogicLab is built around two ideas:
 
 - **Zero friction** — one HTML file, opens in any browser, nothing to install or sign up for.
-- **Honest timing diagrams** — the clock runs on a uniform timebase and stays a clean square wave; inputs appear at their true position within a cycle. The waveform reads like a logic-analyzer trace, which is exactly what an intro course needs.
+- **Honest timing diagrams** — the clock is generated from a uniform time base, not from events, so it stays a clean square wave even when an input changes mid-cycle. Time is sampled at sub-cycle resolution (four samples per clock half-cycle), so input transitions appear at about their true position. It reads like a logic-analyzer trace — the opposite of event-stepped tools, where the clock visibly stretches whenever an input toggles.
 
 ## Features
 
 - **Combinational logic** — switches, LEDs, and the seven distinctive-shape gates (NOT, AND, OR, NAND, NOR, XOR, XNOR) drawn in ANSI/Mano style with proper inversion bubbles.
 - **Sequential logic** — edge-triggered D, JK, and T flip-flops as labeled boxes with the clock dynamic-indicator notch and a bubbled Q′ output. Feedback loops (Q′→D toggles, ripple counters) are supported.
-- **Uniform-time timing diagram** — automatically traces every clock, input, and output as a classic stepped waveform on a real time grid, so the clock never distorts when an input changes.
+- **Uniform-time timing diagram** — automatically traces every clock, input, and output as a stepped waveform. The clock is derived from a uniform time base (four samples per clock half-cycle), so it never distorts when an input changes mid-cycle, and input transitions land at roughly their true position in the cycle.
 - **Labeled I/O** — inputs and outputs are named on the canvas (`IN1`, `IN2`, `CLK1`, `OUT1`, `OUT2`…) matching the timing-diagram rows. **Double-click** any input or output to rename it (e.g. `A`, `B`, `Sum`, `Carry`); the name shows on the sheet and in the trace, and is saved with the circuit.
-- **Manual stepping** — pause the clock and advance one rising edge at a time to walk a class through a circuit edge by edge.
+- **Manual stepping** — pause the clock and press **STEP** to advance one full clock cycle (rising edge to rising edge) at a time, walking a class through a circuit cycle by cycle.
 - **Rotate, pan, zoom** and orthogonal wire routing with manual bend points.
 - **Save / Open** circuits as plain JSON, plus a built-in **Examples** menu.
-- Wires show logic level at a glance: green for 1, grey for 0.
+- **Live level readout** — input value chips and output lamps glow green for `1` and stay grey for `0`, so the circuit state is readable at a glance.
 
 ## Getting started
 
@@ -54,7 +54,7 @@ To make it available online, enable **GitHub Pages** for the repository (it's al
 - **Wire** — drag from an output lead to an input lead. While wiring, click on the sheet to drop right-angle bend points. One wire per input.
 - **Power** — click **POWER** to energize the circuit.
 - **Toggle an input** — click an `IN` switch (when powered).
-- **Clock** — the `CLK` part runs automatically; set its speed (1–10 Hz) with the slider. **❚❚** pauses it; **STEP** then advances one rising edge at a time.
+- **Clock** — the `CLK` part runs automatically; set its speed (1–10 Hz) with the slider. **❚❚** pauses it; **STEP** then advances one full clock cycle (rising edge to rising edge) per press.
 - **Rename I/O** — double-click an `IN`, `CLK`, or `OUT` to give it a meaningful name.
 - **Rotate** — select a component and press **R** or the rotate button.
 - **Move / delete** — drag a part to move it; select a part or wire and press **Delete**. **Esc** cancels.
@@ -71,7 +71,7 @@ To make it available online, enable **GitHub Pages** for the repository (it's al
 
 ## Timing diagram
 
-The panel along the bottom records a waveform for each clock, input switch, and output. Samples are taken on a uniform time grid, so the clock stays a clean square wave while inputs appear at their true position within a cycle.
+The panel along the bottom records a waveform for each clock, input switch, and output. Time advances on a fine uniform grid (four samples per clock half-cycle) and the clock level is computed from that time base, so the clock stays a clean square wave and never stretches when an input changes mid-cycle — unlike event-stepped simulators. Input changes are picked up at the next sample, so they appear at about their true position within the cycle.
 
 The trace deliberately focuses on the circuit's **interface** — clocks, inputs, and outputs — to keep the panel readable; internal flip-flop states show up in the outputs they drive. Use **CLEAR TRACE** to restart the trace, or **HIDE** to collapse the panel for combinational work.
 
