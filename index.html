@@ -149,7 +149,7 @@
 </head>
 <body>
 <header>
-  <div class="brand"><span class="dot" id="liveDot"></span>LogicLab <small id="ver">v2.3</small></div>
+  <div class="brand"><span class="dot" id="liveDot"></span>LogicLab <small id="ver">v2.5</small></div>
   <div class="tools">
     <div class="btn power" id="powerBtn"><span class="ring"></span><span id="powerTxt">POWER</span></div>
     <div class="btn" id="pauseBtn" title="Pause / resume the auto clock">❚❚</div>
@@ -385,7 +385,7 @@ function sampleVal(c){
   return false;
 }
 function isTracked(c){
-  return c.type==="CLOCK"||c.type==="SWITCH"||DEFS[c.type].kind==="ff"||c.type==="LED";
+  return c.type==="CLOCK"||c.type==="SWITCH"||c.type==="LED";
 }
 function recordSample(){
   if(!powered) return;
@@ -396,12 +396,16 @@ function recordSample(){
 }
 function trackedSignals(){
   const out=[], idx={clk:0,in:0,q:0,out:0};
-  const push=(c,kind,base)=>{ idx[kind]++; out.push({id:c.id,kind,name:base+idx[kind]}); };
+  const push=(c,kind,base)=>{ idx[kind]++; out.push({id:c.id,kind,name:c.name||(base+idx[kind])}); };
   for(const c of comps) if(c.type==="CLOCK") push(c,"clk","CLK");
   for(const c of comps) if(c.type==="SWITCH") push(c,"in","IN");
-  for(const c of comps) if(DEFS[c.type].kind==="ff") push(c,"q","Q");
   for(const c of comps) if(c.type==="LED") push(c,"out","OUT");
   return out;
+}
+function ioDisplayName(c){
+  if(c.name) return c.name;
+  const s = trackedSignals().find(s=>s.id===c.id);
+  return s ? s.name : "";
 }
 function renderTiming(){
   const labels=document.getElementById("tlLabels");
@@ -653,8 +657,6 @@ function renderComp(c){
     const t=el("text",{x:x+18,y:y+23,"text-anchor":"middle","font-size":12,
       "font-family":"'IBM Plex Mono'",fill:on?"#06270f":"#9aa0ab","font-weight":600});
     t.textContent = on?"1":"0"; g.appendChild(t);
-    const lab=el("text",{x:x+34,y:y+23,"font-size":9,"font-family":"'IBM Plex Mono'",fill:"#9aa0ab"});
-    lab.textContent=c.type==="CLOCK"?"clk":"sw"; g.appendChild(lab);
   }
   else if(d.kind==="output"){
     const v = powered && inVal(c,0);
@@ -668,6 +670,12 @@ function renderComp(c){
   }
   else { // gate — Mano/ANSI distinctive shape
     drawGate(g,c,stroke,sw);
+  }
+
+  // I/O name caption above the part (matches timing-panel signal names)
+  if(d.kind==="input"||d.kind==="output"){
+    const nm=ioDisplayName(c);
+    if(nm){ const cap=el("text",{x:0,y:y-6,"text-anchor":"middle",class:"comp-label","font-size":10}); cap.textContent=nm; g.appendChild(cap); }
   }
 
   // pins: visible lead stub for I/O; transparent hit-target everywhere (no hollow circle)
@@ -886,7 +894,7 @@ document.getElementById("clearBtn").onclick=()=>{
 function serializeCircuit(){
   return {
     app:"LogicLab", format:1, saved:new Date().toISOString(),
-    comps: comps.map(c=>({id:c.id,type:c.type,x:c.x,y:c.y,rot:c.rot||0,on:!!c.on})),
+    comps: comps.map(c=>({id:c.id,type:c.type,x:c.x,y:c.y,rot:c.rot||0,on:!!c.on,name:c.name||undefined})),
     wires: wires.map(w=>({id:w.id,from:w.from,to:w.to,points:(w.points||[]).map(p=>({x:p.x,y:p.y}))})),
     nextId
   };
@@ -909,7 +917,7 @@ function loadCircuit(obj){
   setPower(false);
   comps = obj.comps
     .filter(c=>DEFS[c.type])                       // ignore unknown component types
-    .map(c=>({id:c.id,type:c.type,x:c.x,y:c.y,rot:c.rot||0,on:!!c.on,target:!!c.on,out:[],q:false,lastClk:false}));
+    .map(c=>({id:c.id,type:c.type,x:c.x,y:c.y,rot:c.rot||0,on:!!c.on,name:c.name||undefined,target:!!c.on,out:[],q:false,lastClk:false}));
   wires = obj.wires
     .filter(w=>w&&w.from&&w.to&&compById(w.from.c)&&compById(w.to.c))
     .map(w=>({id:w.id,from:w.from,to:w.to,points:(w.points||[]).map(p=>({x:p.x,y:p.y}))}));
@@ -944,22 +952,22 @@ document.getElementById("tlToggle").onclick=()=>{
   if(!collapsed) renderTiming();
 };
 document.getElementById("tlClear").onclick=()=>{ history=[]; if(powered) recordSample(); renderTiming(); };
+sheet.addEventListener("dblclick",e=>{
+  const g=e.target.closest('[data-role="comp"]'); if(!g) return;
+  const c=comps.find(c=>c.id===+g.dataset.id); if(!c) return;
+  const d=DEFS[c.type];
+  if(d.kind==="input"||d.kind==="output"){
+    const v=prompt("Name this "+d.kind+":", c.name||"");
+    if(v!==null){ c.name=v.trim()||undefined; render(); renderTiming(); }
+  }
+});
 
 /* ---------------- default circuit shown at startup ---------------- */
 const DEFAULT_CIRCUIT = {
   app:"LogicLab", format:1,
-  comps:[
-    {id:1,type:"SWITCH",x:256,y:112,rot:0,on:false},
-    {id:2,type:"CLOCK", x:256,y:152,rot:0,on:false},
-    {id:3,type:"DFF",   x:416,y:120,rot:0,on:false},
-    {id:4,type:"LED",   x:536,y:112,rot:0,on:false}
-  ],
-  wires:[
-    {id:5,from:{c:1,p:0},to:{c:3,p:0},points:[{x:252,y:104},{x:252,y:112}]},
-    {id:7,from:{c:3,p:0},to:{c:4,p:0},points:[{x:351,y:112},{x:533,y:112}]},
-    {id:8,from:{c:2,p:0},to:{c:3,p:1},points:[{x:336,y:128}]}
-  ],
-  nextId:9
+  comps:[],
+  wires:[],
+  nextId:1
 };
 function loadDemo(){
   viewScale=1; viewX=0; viewY=0;
@@ -972,7 +980,19 @@ function loadDemo(){
    To add an example: build it in the app, SAVE it, then paste the JSON here
    as { name:"Title", circuit: <pasted JSON> }. */
 const EXAMPLES = [
-  { name:"D flip-flop", circuit: DEFAULT_CIRCUIT },
+  { name:"D flip-flop", circuit: {
+    comps:[
+      {id:1,type:"SWITCH",x:208,y:112,rot:0,on:false},
+      {id:2,type:"CLOCK", x:280,y:160,rot:0,on:false},
+      {id:3,type:"DFF",   x:416,y:120,rot:0,on:false},
+      {id:4,type:"LED",   x:536,y:112,rot:0,on:false}
+    ],
+    wires:[
+      {id:7,from:{c:3,p:0},to:{c:4,p:0},points:[{x:351,y:112},{x:533,y:112}]},
+      {id:8,from:{c:2,p:0},to:{c:3,p:1},points:[{x:336,y:128}]},
+      {id:9,from:{c:1,p:0},to:{c:3,p:0},points:[]}
+    ],
+    nextId:10 } },
   { name:"Half adder", circuit: {
     comps:[
       {id:4,type:"LED",x:512,y:176,rot:0,on:false},
@@ -980,7 +1000,7 @@ const EXAMPLES = [
       {id:10,type:"XOR",x:336,y:88,rot:0,on:false},
       {id:11,type:"AND",x:336,y:176,rot:0,on:false},
       {id:14,type:"SWITCH",x:208,y:80,rot:0,on:false},
-      {id:15,type:"SWITCH",x:208,y:128,rot:0,on:false}
+      {id:15,type:"SWITCH",x:144,y:120,rot:0,on:false}
     ],
     wires:[
       {id:12,from:{c:11,p:0},to:{c:9,p:0},points:[]},
