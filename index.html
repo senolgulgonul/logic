@@ -180,7 +180,7 @@
       <li><b>Zoom</b>: scroll the mouse wheel over the sheet to zoom in/out.</li>
       <li><b>Pan</b>: drag on an empty part of the sheet (or use the middle mouse button). A plain click on empty space clears the selection.</li>
       <li><b>Power</b>: energize the circuit. Wires turn green for 1, grey for 0.</li>
-      <li><b>Inputs</b>: click an IN switch to toggle it — at any moment, including mid clock-cycle.</li>
+      <li><b>Inputs</b>: click an IN switch to toggle it — at any moment, including mid clock-cycle. (Double-click to rename it while the power is off.)</li>
       <li><b>Logic 1 / Logic 0</b>: fixed sources that always drive a constant high or low — wire them into any input.</li>
       <li><b>Clock</b>: the CLK part runs automatically; set speed with the slider. <b>Pause</b> (❚❚) stops it; <b>STEP</b> then advances one full clock cycle (rising edge to rising edge) at a time.</li>
       <li><b>Flip-flops</b> sample their inputs on the rising clock edge.</li>
@@ -855,13 +855,16 @@ window.addEventListener("mouseup",e=>{
   if(drag){
     if(!drag.moved){ // a click (no movement)
       const c=drag.c;
+      const toggles = powered && c.type==="SWITCH";    // a live switch toggles on every click — never a dbl-click
       const now=Date.now();
-      if(lastClick && lastClick.id===c.id && (now-lastClick.t)<400){
+      if(toggles){
+        c.on=!c.on; evaluate(); if(!hasClockComp()) recordSample(); render();
+        lastClick=null;
+      }else if(lastClick && lastClick.id===c.id && (now-lastClick.t)<400){
         lastClick=null;
         editComp(c);                                   // second quick click on same part → edit/rename
       }else{
         lastClick={id:c.id,t:now};
-        if(powered && c.type==="SWITCH"){ c.on=!c.on; evaluate(); if(!hasClockComp()) recordSample(); render(); }
       }
     }
     drag=null;
