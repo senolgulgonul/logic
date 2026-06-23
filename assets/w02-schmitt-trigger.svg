@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 360' width='480' height='360'>
+<rect width='480' height='360' fill='#fff'/>
+<text x='20' y='26' font-family='DejaVu Sans Mono, monospace' font-size='13' font-weight='600' fill='#1c1f26'>Schmitt trigger: two thresholds</text>
+<line x1='70' y1='300' x2='420' y2='300' stroke='#1c1f26' stroke-width='2'/>
+<line x1='70' y1='300' x2='70' y2='65' stroke='#1c1f26' stroke-width='2'/>
+<text x='420' y='322' font-family='DejaVu Sans Mono, monospace' font-size='12' text-anchor='end' fill='#1c1f26'>Vin</text>
+<text x='74' y='65' font-family='DejaVu Sans Mono, monospace' font-size='12' fill='#1c1f26'>Vout</text>
+<polyline points='70,290 297.5,290 297.5,85 410,85' fill='none' stroke='#1f77b4' stroke-width='2.5'/>
+<polyline points='410,85 192.5,85 192.5,290 70,290' fill='none' stroke='#d62728' stroke-width='2.5' stroke-dasharray='5,4'/>
+<text x='192.5' y='320' font-family='DejaVu Sans Mono, monospace' font-size='11' text-anchor='middle' fill='#d62728'>VT-</text>
+<text x='297.5' y='320' font-family='DejaVu Sans Mono, monospace' font-size='11' text-anchor='middle' fill='#1f77b4'>VT+</text>
+<text x='408' y='77' font-family='DejaVu Sans Mono, monospace' font-size='10' text-anchor='end' fill='#1f77b4'>rising</text>
+<text x='100' y='282' font-family='DejaVu Sans Mono, monospace' font-size='10' fill='#d62728'>falling</text>
+</svg>
