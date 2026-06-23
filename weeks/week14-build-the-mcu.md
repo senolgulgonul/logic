@@ -15,7 +15,7 @@ last_updated: 2026-06-23
 The complete machine runs in LogicLab. Open it, press power, and single-step the clock to watch
 it execute:
 
-[▶ Open the 4-bit MCU in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fraw.githubusercontent.com%2Fsenolgulgonul%2Flogiclab%2Fmain%2Fmcu_v4.logiclab.json)
+[▶ Open the 4-bit MCU in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fraw.githubusercontent.com%2Fsenolgulgonul%2Flogiclab%2Fmain%2Fmcu_v4.logiclab.json){:target="_blank" rel="noopener"}
 
 ![EEE 213 MCU datapath](../assets/w14-mcu-datapath.png)
 
@@ -77,10 +77,10 @@ the [Lab Annex](../annex-lab-arduino.html).
 ## What is inside each block
 
 If you want to see how a block works from gates rather than as a single part, these were built up
-in the earlier weeks: the [ALU](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-alu4.logiclab.json)
-from full adders, the [register](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-reg4.logiclab.json)
-and [program counter](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-pc3.logiclab.json)
-from flip-flops, and the [ROM](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-rom8.logiclab.json)
+in the earlier weeks: the [ALU](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-alu4.logiclab.json){:target="_blank" rel="noopener"}
+from full adders, the [register](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-reg4.logiclab.json){:target="_blank" rel="noopener"}
+and [program counter](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-pc3.logiclab.json){:target="_blank" rel="noopener"}
+from flip-flops, and the [ROM](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fmcu-rom8.logiclab.json){:target="_blank" rel="noopener"}
 from a lookup table.
 
 ## Check yourself

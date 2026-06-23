@@ -17,7 +17,7 @@ edge.
 
 ![1-bit register](../assets/w12-1bit-register.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw12-1bit-register.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw12-1bit-register.logiclab.json){:target="_blank" rel="noopener"}
 
 ## An n-bit register
 
@@ -33,7 +33,7 @@ data **shifts** one position along the chain.
 
 ![4-bit shift register](../assets/w12-shift-register.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw12-shift-register.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw12-shift-register.logiclab.json){:target="_blank" rel="noopener"}
 
 Serial in, serial out turns one wire into many over several clocks (and back), which is how a few
 pins drive many outputs. Parallel-load and parallel-out variants exist too.

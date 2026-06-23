@@ -28,7 +28,7 @@ the clock at **half** the frequency. Chain them and each stage halves again: div
 
 ![Frequency divider](../assets/w11-freq-divider.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw11-freq-divider.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw11-freq-divider.logiclab.json){:target="_blank" rel="noopener"}
 
 This is also why a ripple counter's bits are a chain of divided clocks.
 

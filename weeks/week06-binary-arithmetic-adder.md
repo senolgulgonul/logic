@@ -30,7 +30,7 @@ differ) and the carry is AND (1 only when both are 1).
 | 1 | 0 | 0 | 1 |
 | 1 | 1 | 1 | 0 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw06-half-adder.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw06-half-adder.logiclab.json){:target="_blank" rel="noopener"}
 
 ## The full adder
 
@@ -51,7 +51,7 @@ combines the two carries.
 | 1 | 1 | 0 | 1 | 0 |
 | 1 | 1 | 1 | 1 | 1 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw06-full-adder.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw06-full-adder.logiclab.json){:target="_blank" rel="noopener"}
 
 ## The 4-bit adder
 

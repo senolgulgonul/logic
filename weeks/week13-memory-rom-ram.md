@@ -38,7 +38,7 @@ contents you set as a hex value, so you can address it with switches and read th
 
 ![LUT4 as a small ROM](../assets/w13-lut-rom.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw13-lut-rom.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw13-lut-rom.logiclab.json){:target="_blank" rel="noopener"}
 
 ## RAM as a grid of registers
 

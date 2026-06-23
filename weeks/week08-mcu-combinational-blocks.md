@@ -19,7 +19,7 @@ results together.
 
 ![1-bit comparator](../assets/w08-comparator-1bit.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw08-comparator-1bit.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw08-comparator-1bit.logiclab.json){:target="_blank" rel="noopener"}
 
 ## Decoder and demultiplexer
 
@@ -44,7 +44,7 @@ lines. A 2-to-1 MUX is `Y = D0·Sel' + D1·Sel`.
 
 ![2-to-1 multiplexer](../assets/w08-mux-2to1.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw08-mux-2to1.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw08-mux-2to1.logiclab.json){:target="_blank" rel="noopener"}
 
 A MUX can also **implement any logic function**: wire the truth-table outputs to the data inputs
 and drive the select lines with the variables.

@@ -36,7 +36,7 @@ set Mode, and watch the same hardware add or subtract:
 
 ![1-bit controlled add/subtract cell](../assets/w07-addsub-cell.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw07-addsub-cell.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw07-addsub-cell.logiclab.json){:target="_blank" rel="noopener"}
 
 ## Overflow
 

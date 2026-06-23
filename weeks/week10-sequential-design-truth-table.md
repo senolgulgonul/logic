@@ -49,7 +49,7 @@ Q0 is 1). Those become the D inputs: `D0 = Q0'`, `D1 = Q1 ⊕ Q0`.
 
 ![2-bit counter](../assets/w10-2bit-counter.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw10-2bit-counter.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw10-2bit-counter.logiclab.json){:target="_blank" rel="noopener"}
 
 ![Sequential design](../assets/w10-sequential-design.png)
 

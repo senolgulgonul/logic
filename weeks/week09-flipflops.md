@@ -19,7 +19,7 @@ inputs 0 it **remembers** the last value.
 
 ![SR latch (cross-coupled NOR)](../assets/w09-sr-latch.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw09-sr-latch.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw09-sr-latch.logiclab.json){:target="_blank" rel="noopener"}
 
 The combination S = R = 1 is **forbidden**, because it drives both outputs to the same value and
 the next state is ambiguous.
@@ -42,7 +42,7 @@ of the time. One data input, one clock, and the stored bit changes once per cloc
 
 ![D flip-flop demo](../assets/w09-dflipflop.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw09-dflipflop.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw09-dflipflop.logiclab.json){:target="_blank" rel="noopener"}
 
 Open it, set D, and press the clock's single-step button: Q takes D's value on the edge and holds
 it until the next edge.

@@ -51,7 +51,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 0 | 1 |
 | 1 | 0 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-not.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-not.logiclab.json){:target="_blank" rel="noopener"}
 
 ### AND
 
@@ -66,7 +66,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-and.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-and.logiclab.json){:target="_blank" rel="noopener"}
 
 ### OR
 
@@ -81,7 +81,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 1 |
 | 1 | 1 | 1 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-or.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-or.logiclab.json){:target="_blank" rel="noopener"}
 
 ### NAND
 
@@ -96,7 +96,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 1 |
 | 1 | 1 | 0 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-nand.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-nand.logiclab.json){:target="_blank" rel="noopener"}
 
 ### NOR
 
@@ -111,7 +111,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 0 |
 | 1 | 1 | 0 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-nor.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-nor.logiclab.json){:target="_blank" rel="noopener"}
 
 ### XOR (exclusive-OR)
 
@@ -126,7 +126,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 1 |
 | 1 | 1 | 0 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-xor.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-xor.logiclab.json){:target="_blank" rel="noopener"}
 
 ### XNOR
 
@@ -141,7 +141,7 @@ LogicLab** to load the live circuit, then toggle **A** and **B** and watch **Y**
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-xnor.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw03-gate-xnor.logiclab.json){:target="_blank" rel="noopener"}
 
 The **eighth** gate is the **buffer**: it just passes its input through, `Y = A`, used to
 strengthen or delay a signal. In LogicLab a plain wire does the same job, so there is no separate

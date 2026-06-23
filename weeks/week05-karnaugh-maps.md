@@ -36,7 +36,7 @@ gate:
 
 ![Minimised circuit](../assets/w05-minimized-a-or-c.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw05-minimized-a-or-c.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw05-minimized-a-or-c.logiclab.json){:target="_blank" rel="noopener"}
 
 **Grouping rules.** Groups must be rectangles of 1, 2, 4, or 8 cells; bigger is better; every 1
 must be covered at least once; groups may overlap; and the map wraps around, so the left and

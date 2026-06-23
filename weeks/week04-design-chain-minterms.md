@@ -65,7 +65,7 @@ A worked example, `Y = A·B + A·C'`:
 
 ![SOP design example](../assets/w04-sop-example.png)
 
-[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw04-sop-example.logiclab.json)
+[▶ Open in LogicLab](https://senolgulgonul.github.io/logiclab/?circuit=https%3A%2F%2Fsenolgulgonul.github.io%2Flogic%2Fexamples%2Fw04-sop-example.logiclab.json){:target="_blank" rel="noopener"}
 
 A larger design, the **7-segment** display, uses exactly this chain, one expression per segment.
 We build it fully when we reach decoders.
