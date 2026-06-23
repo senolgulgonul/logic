@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+title: "EEE 213: Introduction to Logic"
+description: "A 14-week digital logic course built around one method and one goal: design everything as a truth table, and assemble it into a working 4-bit microcontroller. Dr. Şenol Gülgönül."
+show_downloads: false
