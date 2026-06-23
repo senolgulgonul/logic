@@ -1,0 +1,81 @@
+{
+  "app": "LogicLab",
+  "format": 1,
+  "saved": "2026-06-23T13:20:27+00:00",
+  "comps": [
+    {
+      "id": 1,
+      "type": "SWITCH",
+      "x": 140,
+      "y": 96,
+      "rot": 0,
+      "on": false,
+      "name": "A"
+    },
+    {
+      "id": 2,
+      "type": "SWITCH",
+      "x": 140,
+      "y": 192,
+      "rot": 0,
+      "on": false,
+      "name": "B"
+    },
+    {
+      "id": 3,
+      "type": "NAND",
+      "x": 310,
+      "y": 96,
+      "rot": 0,
+      "on": false
+    },
+    {
+      "id": 4,
+      "type": "LED",
+      "x": 480,
+      "y": 96,
+      "rot": 0,
+      "on": false,
+      "name": "Y"
+    }
+  ],
+  "wires": [
+    {
+      "id": 5,
+      "from": {
+        "c": 1,
+        "p": 0
+      },
+      "to": {
+        "c": 3,
+        "p": 0
+      },
+      "points": []
+    },
+    {
+      "id": 6,
+      "from": {
+        "c": 2,
+        "p": 0
+      },
+      "to": {
+        "c": 3,
+        "p": 1
+      },
+      "points": []
+    },
+    {
+      "id": 7,
+      "from": {
+        "c": 3,
+        "p": 0
+      },
+      "to": {
+        "c": 4,
+        "p": 0
+      },
+      "points": []
+    }
+  ],
+  "nextId": 8
+}
